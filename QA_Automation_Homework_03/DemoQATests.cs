@@ -458,12 +458,8 @@ namespace QA_Automation_Homework_03
         [Description("Test validates whether phone number is less than 10 digits")]
         public void PhoneNumber()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
-
-            //Navigate to registration page
-            homePage.NavigateTo();
-            homePage.registrationButton.Click();
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find and clear Phone number. Fill in 4 random numbers
             registrationPage.phone.Clear();
@@ -482,12 +478,8 @@ namespace QA_Automation_Homework_03
         {
             //Test verifies whether user is on Registration page
 
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
-
-            //Navigate to registration page
-            homePage.NavigateTo();
-            homePage.registrationButton.Click();
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Registration page text
             var registrationPageText = driver.FindElement(By.XPath("//*[@id=\"post-49\"]/header/h1"));
@@ -501,8 +493,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies whether entering a random number as email is valid")]
         public void InvalidEmailOnlyNumbers()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find Email and enter only random numbers
             registrationPage.email.Clear();
@@ -520,8 +512,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies whether password mismatch is caught in case Password is longer than Confirm password")]
         public void PasswordMismatchPasswordLongerThanConfirmPassword()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find Password and fill it
             registrationPage.password.Clear();
@@ -543,8 +535,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies whether you can create a phone number using letters")]
         public void PhoneNumberWithLetters()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find and clear Phone number. Fill in 4 random numbers
             registrationPage.phone.Clear();
@@ -562,8 +554,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies whether username is entered")]
         public void EmptyUsername()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find and clear Username
             registrationPage.username.Clear();
@@ -580,8 +572,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies whether you can submit empty email")]
         public void EmptyEmail()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find Email and enter only random numbers
             registrationPage.email.Clear();
@@ -598,8 +590,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies password is very weak")]
         public void SubmitVeryWeakPassword()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find Password and clear it, fill with values
             registrationPage.password.Clear();
@@ -621,8 +613,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies if submitting only Confirm password gets an error message")]
         public void SubmitOnlyConfirmPassword()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find Password and clear it
             registrationPage.password.Clear();
@@ -644,8 +636,8 @@ namespace QA_Automation_Homework_03
         public void SubmitOnlyPassword()
 
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find Password and clear it
             registrationPage.password.Clear();
@@ -665,8 +657,8 @@ namespace QA_Automation_Homework_03
         [Test]
         public void VerifyPageTitle()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Assert that message has appeared
             Assert.AreEqual("Registration | Demoqa", registrationPage.Header);
@@ -677,8 +669,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies Hobby field is empty")]
         public void EmptyHobbyField()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find and Click Submit
             registrationPage.submitButton.Click();
@@ -692,8 +684,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies that when first and last name are entered, there is no error message, even if only numbers are used")]
         public void NameFieldsFilledWithNumbers()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //click submit button
             registrationPage.submitButton.Click();
@@ -730,8 +722,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies whether entering random letters as email is valid")]
         public void InvalidEmailOnlyLetters()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find Email and enter only random letters
             registrationPage.email.Clear();
@@ -749,8 +741,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies if only first name is allowed")]
         public void OnlyFirstName()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //click submit button
             registrationPage.submitButton.Click();
@@ -774,8 +766,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies if only last name is allowed - should be possible")]
         public void OnlyLastName()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //click submit button
             registrationPage.submitButton.Click();
@@ -799,8 +791,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies whether password mismatch is caught in case Password is shorter than Confirm password")]
         public void PasswordMismatchPasswordShorterThanConfirmPassword()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find Password and clear it
             registrationPage.password.Clear();
@@ -822,8 +814,8 @@ namespace QA_Automation_Homework_03
         [Description("Test verifies whether password mismatch is caught in Mismatch field")]
         public void PasswordMismatchField()
         {
-            var homePage = new HomePage(driver);
             var registrationPage = new RegistrationPage(driver);
+            driver.Navigate().GoToUrl(registrationPage.URL);
 
             //Find Password and clear it
             registrationPage.password.Clear();
